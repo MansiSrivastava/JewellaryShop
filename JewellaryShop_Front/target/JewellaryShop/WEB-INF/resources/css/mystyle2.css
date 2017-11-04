@@ -1,0 +1,40 @@
+#body2{
+	background:url("../images/backgrnd.jpg") no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.jumbotron {
+background: #000000;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+.addr1{
+	color:#ffffff;
+}
+.head1{
+	color:#000000;
+	font-family:Brush Script MT;
+}
+.mytable-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+.mytable-striped > tbody > tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+.mytable-striped > thead > tr{
+  background-color: #000000;
+}
+.mytable-striped > thead > tr > th{
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:webflow="http://www.springframework.org/schema/webflow-config"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/webflow-config
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+    
+    <!-- Specifying the Resource location to load JS, CSS, Images etc -->   
+    <mvc:resources mapping="/resources/**" location="WEB-INF/resources/" />
+    <mvc:resources mapping="/admin/resources/**" location="WEB-INF/resources/" />
+    <mvc:resources mapping="/cart/resources/**" location="WEB-INF/resources/" />
+    <mvc:annotation-driven /> 
+    
+    <!-- Specifying base package of the Components like Controller, Service, DAO -->
+    <context:component-scan base-package="com.jewellaryshop.controller" />
+    <!-- WebFlow Configuration -->
+	<webflow:flow-executor id="flowExecutor" />
+ 
+	<webflow:flow-registry id="flowRegistry"
+		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
+		<!-- here the id is mapped to invoke this flow -->
+		<webflow:flow-location id="memberShip" path="/memberShipFlow.xml" />
+	</webflow:flow-registry>
+ 
+	<webflow:flow-builder-services id="flowBuilderServices"
+		view-factory-creator="viewFactoryCreator" />
+ 
+	<bean id="viewFactoryCreator"
+		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers">
+			<list>
+				<ref bean="viewResolver" />
+			</list>
+		</property>
+	</bean>
+    
+    <!-- View Resolver 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean> -->
+    
+    <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+   
+   <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+ 
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="0" />
+	</bean>
+	
+    <!-- Multipart Resolver -->
+    <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    
+  </beans>

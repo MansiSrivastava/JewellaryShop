@@ -1,0 +1,26 @@
+#body3{
+	background:url("../images/backgrnd.jpg") no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.panel-default {
+margin-top:30px;
+}
+
+.div2{
+	background-color:#000000;
+}
+
+.b1{
+	color:#ffffff;
+}
+
+#p2{
+   color:#ffffff;
+}
+
+.form-group.last { margin-bottom:0px; }

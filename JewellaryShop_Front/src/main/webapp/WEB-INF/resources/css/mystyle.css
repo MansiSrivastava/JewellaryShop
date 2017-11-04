@@ -1,0 +1,54 @@
+#body1{
+	text-align:center;
+	margin:auto;
+	background:url("../images/backgrnd.jpg") no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.head1{
+	color:#ffffff;
+}
+
+.p1{
+	font-style:italic;
+	font-family:serif;
+	color:#ffffff;
+}
+
+.div1{
+	margin-top:0px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #808080;   
+}
+.carousel-indicators .active {
+    background-color: #000000;
+}
+.carousel-inner{
+	max-width:50%;
+	margin: 0 auto;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}

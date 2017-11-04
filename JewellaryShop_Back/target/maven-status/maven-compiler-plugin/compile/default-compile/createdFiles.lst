@@ -1,0 +1,15 @@
+com\backend\spring\model\User.class
+com\backend\spring\service\UserService.class
+com\backend\spring\service\ProductService.class
+com\backend\spring\configuration\AppConfig.class
+com\backend\spring\dao\AbstractDao.class
+com\backend\spring\service\ProductServiceImpl.class
+com\backend\spring\AppMainUser.class
+com\backend\spring\dao\ProductDaoImpl.class
+com\backend\spring\dao\ProductDao.class
+com\backend\spring\AppMain.class
+com\backend\spring\service\UserServiceImpl.class
+com\backend\spring\model\Product.class
+com\backend\spring\configuration\HibernateConfiguration.class
+com\backend\spring\dao\UserDao.class
+com\backend\spring\dao\UserDaoImpl.class
